@@ -3,6 +3,7 @@ title: "Presentation basics"
 author: "Steve Simon"
 date: "June 6, 2018"
 output: ioslides_presentation
+bibliography: key-references.bibtex
 ---
 
 ## Abstract
@@ -18,6 +19,12 @@ If you like bullets, precede each bullet item with a dash (-).
 - Bullet 1
 - Bullet 2
 - Bullet 3
+
+## Images
+
+You can include images with exclamation-point square-brackets parentheses. The caption goes inside the square brackets and the file location of the image goes inside the parentheses. You can hotlink to images on the Internet, but this could hurt you if you present in a room with no Internet connection.
+
+![Figure 1. xkcd cartoon](~/presentations-using-rmarkdown/images/scientific_paper_graph_quality.png)
 
 ## R code snippets
 
@@ -55,7 +62,7 @@ You can control the size of the plot with the fig.width and fig.height arguments
 
 ## Plot example
 
-```{r simple-plot, fig.cap="Figure 1. Go figure.", fig.width=4, fig.height=3, fig.align="left"}
+```{r simple-plot, fig.cap="Figure 2. Go figure.", fig.width=4, fig.height=3, fig.align="left"}
 x <- seq(0, 1, length=1001)
 y <- dbeta(x, 2, 9)
 plot(x, y, type="l")
@@ -69,5 +76,8 @@ $I_x(\alpha, \beta) = \int_0^x \frac{\Gamma(\alpha+\beta)} {\Gamma(\alpha)\Gamma
 
 $\Phi(x)= \int_{-\infty}^{x} \frac{1} {\sqrt{2\pi}}e^{-t^2/2} dt$
 
-## Plot options
+## You can include a bibliography
 
+If you specify bibiography: in your yaml header and point to a bibtex file, you can cite references and put a bibliography at the end of your talk. In one of my talks I mentioned [@bellazzi2012] and [@chen2018]. The full citations appear as the very last page.
+
+## Bibliography
