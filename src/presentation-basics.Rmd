@@ -24,7 +24,7 @@ If you like bullets, precede each bullet item with a dash (-).
 
 You can include images with exclamation-point square-brackets parentheses. The caption goes inside the square brackets and the file location of the image goes inside the parentheses. You can hotlink to images on the Internet, but this could hurt you if you present in a room with no Internet connection.
 
-![Figure 1. xkcd cartoon](~/presentations-using-rmarkdown/images/scientific_paper_graph_quality.png)
+![Figure 1. xkcd cartoon](../images/scientific_paper_graph_quality.png)
 
 ## R code snippets
 

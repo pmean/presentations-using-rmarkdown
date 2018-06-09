@@ -7,6 +7,7 @@ output:
     orientation: columns
     vertical_layout: fill
     theme: spacelab
+    favicon: ../images/favicon.ico
 bibliography: key-references.bibtex
 ---
 ```{r echo=FALSE}
@@ -34,7 +35,7 @@ If you like bullets, precede each bullet item with a dash (-).
 
 ### **Images <i class="fa fa-picture-o"></i>** with a side panel
 
-![Figure 1. xkcd cartoon](https://upload.wikimedia.org/wikipedia/commons/6/69/Relationships_among_some_of_univariate_probability_distributions.jpg)
+![Figure 1. xkcd cartoon](../images/scientific_paper_graph_quality.png)
 
 ***
 
