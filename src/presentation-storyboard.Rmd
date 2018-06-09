@@ -1,18 +1,31 @@
 ---
-title: "Presentation basics"
-author: "Steve Simon"
-date: "June 6, 2018"
-output: ioslides_presentation
+title: "Storyboard basics"
+date: "June 9, 2018"
+output: 
+  flexdashboard::flex_dashboard:
+    storyboard: true
+    orientation: columns
+    vertical_layout: fill
+    theme: spacelab
+    favicon: ../images/favicon.ico
 bibliography: key-references.bibtex
 ---
+```{r echo=FALSE}
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
 
-## Abstract
+### Why **Storyboard <i class="fa fa-book"></i>**?
 
-This brief presentation, which was made using R Markdown, will show you some of the basics associated with building a presentation using R Markdown.
+- Presentations are dead.
+- Stories live forever.
+- We want stories with pictures and graphs.
+- It should look good on mobile.
 
-## Beginning a new slide
+***
 
-You separate your content into different slides by marking the start of a line with two pound signs (##). What follows on the same line of the two pound signs is the title of your slide. Anything on a fresh line becomes the body of your slide.
+Beginning a new slide
+
+You separate your content into different slides by marking the start of a line with two pound signs (###). What follows on the same line of the two pound signs is the title of your slide. Anything on a fresh line becomes the body of your slide.
 
 If you like bullets, precede each bullet item with a dash (-).
 
@@ -20,55 +33,48 @@ If you like bullets, precede each bullet item with a dash (-).
 - Bullet 2
 - Bullet 3
 
-## Images
-
-You can include images with exclamation-point square-brackets parentheses. The caption goes inside the square brackets and the file location of the image goes inside the parentheses. You can hotlink to images on the Internet, but this could hurt you if you present in a room with no Internet connection.
+### **Images <i class="fa fa-picture-o"></i>** with a side panel
 
 ![Figure 1. xkcd cartoon](../images/scientific_paper_graph_quality.png)
 
-## R code snippets
+***
+
+You can include images with exclamation-point square-brackets parentheses. The caption goes inside the square brackets and the file location of the image goes inside the parentheses. You can hotlink to images on the Internet, but this could hurt you if you present in a room with no Internet connection.
+
+- This photo is from Wikimedia.
+- Refer to the [Flexdashboard Home](https://rmarkdown.rstudio.com/flexdashboard/index.html) for examples, themes, layouts and how to include HTML widgets.
+
+### Including R **code <i class="fa fa-code"></i>**
 
 You can include brief snippets of R code using the backtick r (`r) followed by the R code snippet and another backtick.
 
 This version of the presentation was printed on `r date()`.
 
-## Longer sections of code
-
 Any substantial R code must be placed inside a chunk. Chunks start with a triple backtick left-curly-brace r right-curly-brace followed by your R code followed by a triple backtick.
 
-```{r}
+```{r echo=TRUE}
 grades <- c("A", "B", "C", "D", "F")
 sample(grades, 10, replace=TRUE)
 ```
-
-## Chunk options
-
-You should get in the habit of naming your chunks.
 
 For many presentations, you will want to hide the underlying R code with the option echo=FALSE.
 
 Here's a list of grades with my detailed grading algorithm kept quiet.
 
-```{r assigning-grades, echo=FALSE}
+```{r echo=FALSE}
 grades <- c("A", "B", "C", "D", "F")
 sample(grades, 10, replace=TRUE)
 ```
 
-## Including plots
+### Including **plots <i class="fa fa-area-chart"></i>**
 
-One of the nicest features in R Markdown is the ability to incorporate near-publication quality graphs with almost no effort.
-
-You can control the size of the plot with the fig.width and fig.height arguments. You can add a caption with fig.cap and you can control plot alignment (left, right, or center) with fig.align.
-
-## Plot example
-
-```{r simple-plot, fig.cap="Figure 2. Go figure.", fig.width=4, fig.height=3, fig.align="left"}
+```{r simple-plot, fig.cap="Figure 2. Go figure."}
 x <- seq(0, 1, length=1001)
 y <- dbeta(x, 2, 9)
 plot(x, y, type="l")
 ```
 
-## Math equations
+### Math equations
 
 You can use TeX code to create simple or intricate math formulas.
 
@@ -76,8 +82,10 @@ $I_x(\alpha, \beta) = \int_0^x \frac{\Gamma(\alpha+\beta)} {\Gamma(\alpha)\Gamma
 
 $\Phi(x)= \int_{-\infty}^{x} \frac{1} {\sqrt{2\pi}}e^{-t^2/2} dt$
 
-## You can include a bibliography
+***
+
+**You can include a bibliography**
 
 If you specify bibiography: in your yaml header and point to a bibtex file, you can cite references and put a bibliography at the end of your talk. In one of my talks I mentioned [@bellazzi2012] and [@chen2018]. The full citations appear as the very last page.
 
-## Bibliography
+### Bibliography
